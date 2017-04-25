@@ -18,7 +18,7 @@ features <- read.table("./UCI HAR Dataset/features.txt")
 # Reading Activity Labels
 activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 
-# 2.2 Assigning Column Names
+# Assigning Column Names
 colnames(x_train) <- features[,2] # assigning names from column 2 of "features" set
 colnames(y_train) <- "activityId"
 colnames(subject_train) <- "subjectId"
@@ -29,12 +29,13 @@ colnames(subject_test) <- "subjectId"
 
 colnames(activityLabels) <- c('activityId', 'activityType')
 
-# 1.3 Merging All Data into One Set
+# Merging All Data into One Set 
 all_train <- cbind(y_train, subject_train, x_train) # combine columns of train sets
 
 all_test <- cbind(y_test, subject_test, x_test) # combine columns of all test sets
 
 setAlldata <- rbind(all_train, all_test) # combine rows of all_train and all_test sets
+
 
 ## 2. Extracting only the measurements of mean and standard deviation for each measurement
 
@@ -47,6 +48,7 @@ mean_and_SD_features <- grep("-(mean|std)\\(\\)", features[,2]) # finding column
 
 # create new data set with mean and std columns
 meanSD <- setAlldata[, mean_and_SD_features]
+
 
 ## 3. Using Descriptive Activity Names in Dataset
 
