@@ -59,10 +59,13 @@ Reads features.txt, activity_labels.txt, subject_train.txt, x_train.txt, y_train
 Merges all data into one dataset and labels variables using features data.
 
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
+
 Extracts columns with 'mean' and 'standard deviation' in column name and creates a separate dataset.
 
 3. Uses descriptive activity names to name the activities in the data set
+
 Sets descriptive activity names
 
 4. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
 Creates separate tidy dataset with averages of each variable activity and subject
